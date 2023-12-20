@@ -21,7 +21,7 @@ export default function Header({ scrollToSkill }) {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // 부드러운 스크롤링 효과를 위한 옵션
+      behavior: 'smooth',
     });
   };
   return (
