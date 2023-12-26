@@ -45,7 +45,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 40px;
-  padding-top: 30px;
+  padding-top: 25px;
   position: fixed;
   top: 0;
   left: 0;
