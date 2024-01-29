@@ -21,6 +21,7 @@ function App() {
         <Title>프론트엔드 개발자 안치영입니다.</Title>
         <LottieAnimation />
       </Introduce>
+      <input type="file" accept="image/*" capture="camera" />
       <BorderLine />
       <Skill id="skill">
         <SubTitle>Skills</SubTitle>
