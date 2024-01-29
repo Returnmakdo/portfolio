@@ -2,7 +2,6 @@ import { createGlobalStyle, styled } from 'styled-components';
 import reset from 'styled-reset';
 import Header from './layout/Header';
 import LottieAnimation from './components/Lottie';
-import { useRef, useState } from 'react';
 
 const GlobalStyle = createGlobalStyle`
  ${reset}
@@ -13,19 +12,6 @@ function App() {
     const section = document.getElementById('skill');
     section.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const [stream, setStream] = useState(null);
-  const videoRef = useRef();
-
-  const startCamera = async () => {
-    try {
-      const userMediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
-      setStream(userMediaStream);
-      videoRef.current.srcObject = userMediaStream;
-    } catch (error) {
-      console.error('카메라를 시작하는 동안 오류 발생:', error);
-    }
-  };
   return (
     <>
       <GlobalStyle />
@@ -35,10 +21,6 @@ function App() {
         <Title>프론트엔드 개발자 안치영입니다.</Title>
         <LottieAnimation />
       </Introduce>
-      <div>
-        <button onClick={startCamera}>카메라 시작</button>
-        {stream && <video ref={videoRef} autoPlay />}
-      </div>
       <BorderLine />
       <Skill id="skill">
         <SubTitle>Skills</SubTitle>
